@@ -13,7 +13,7 @@ export class AboutComponent {
 
   constructor() {
     this.title = 'Joaquín Puente';
-    this.subtitle = 'Alumno UVG';
+    this.subtitle = 'Ingeniero en Ciencias de la computación & Matemático';
     this.web = 'jpuente.dev';
     this.github = 'github.com/Its-Japo';
   }
