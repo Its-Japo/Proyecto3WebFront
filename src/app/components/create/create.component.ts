@@ -4,6 +4,7 @@ import { ProjectService } from '../../services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { Global } from 'src/app/services/global';
 
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -11,6 +12,7 @@ import { Global } from 'src/app/services/global';
   providers: [ProjectService, UploadService]
 })
 export class CreateComponent {
+  
   public title: string;
   public project: Project;
   public savedProject: Project;
@@ -69,6 +71,13 @@ export class CreateComponent {
   }
 
   fileChangeEvent(fileInput: any){
-    this.filesToUpload = <Array<File>>fileInput.target.files;
+    const file = fileInput.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      this.project.image = reader.result as string;
+    };
+
+    reader.readAsDataURL(file);
   }
 }

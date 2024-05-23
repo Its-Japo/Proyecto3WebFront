@@ -59,14 +59,13 @@
                     
                     <input type="file" name="image" placeholder="Upload" (change)="fileChangeEvent($event)"/>
                 </div>
-        
                 <input type="submit" value="Send" [disabled]="!projectForm.form.valid"/>
             </form>
         </div>
         <div *ngIf="project.image" id="editImageDiv">
             <div id="editImage">
                 <h3>Imagen actual</h3>
-                <img src="{{url + 'get-image/' + project.image}}" id="editImageItself">
+                <img [src]="project.image" alt="Project Image" *ngIf="project.image">
             </div>
         </div>
     </div>
