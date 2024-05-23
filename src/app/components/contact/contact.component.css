@@ -1,0 +1,13 @@
+.contact-container {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info h1 {
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
